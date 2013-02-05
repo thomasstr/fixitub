@@ -23,5 +23,5 @@ production:
   database: fixitub_production
   pool: 5
   host: localhost
-  user: fixitub
+  username: fixitub
   password: prv64dri

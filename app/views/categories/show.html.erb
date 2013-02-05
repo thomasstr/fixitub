@@ -1,0 +1,18 @@
+<div class="content">
+	
+	<h2><%= best_in_place @product, :product_name, :type => :input %></h2>
+	<br/>
+	<div class="wrap_image">
+		<%= image_tag "320x320.gif" %>
+		<p>
+			<%= @product.about %><br/>
+			Kr. <%= @product.price %>
+		</p>
+	</div>
+	<br/>
+	<div class="image_feed">
+		<%= image_tag "150x150.gif" %>
+		<%= image_tag "150x150.gif" %>
+		<%= image_tag "150x150.gif" %>
+	</div>
+</div>

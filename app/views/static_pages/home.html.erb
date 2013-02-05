@@ -1,0 +1,17 @@
+<% provide(:title, 'Hjem') %>
+	<%= render 'slider' %>
+	<br/>
+	<br/>
+	<br/>
+          <div class="row-fluid">
+			  <% @posts.each do |post| %>
+			  <div class="span4">
+				  <h2><%= post.name %></h2>
+				  <p><%= post.content %> </p>
+              	  <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+			<% end %>
+            
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->

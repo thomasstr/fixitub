@@ -1,0 +1,20 @@
+<div id="sidebar">
+	<div id="logo">
+		<%=link_to "#{image_tag("fixitub-logo.png")}".html_safe, root_path %>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<ul>
+		<li><%= link_to 'Reperasjoner ', repairs_path, :class => 'icon service' %></li>
+		<li><%= link_to 'Spør vår tekniker', contact_path, :class => 'icon chat' %></li>
+		<li><%= link_to 'Om oss', new_user_session_path, :class => 'icon login' %></li>
+		<li><%= link_to 'Kontakt oss', dropline_path, :class => 'icon mail' %></li>
+		
+		<li></li>
+	</ul>
+	<div id="contact-logos">
+		<%=link_to "#{image_tag("fb-logo.png")}".html_safe, "http://www.facebook.com/FixItUB?fref=ts" %>
+	</div>
+</div>

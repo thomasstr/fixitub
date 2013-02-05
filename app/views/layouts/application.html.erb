@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fixitub</title>
+  <% meta :description => "FixIt UB", :keywords => "iphone, iphone4, iphone4s, reperasjon" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container-fluid">
+		<%= render "layouts/menu" %>
+		<% if user_signed_in? %>
+		<%= render "layouts/topbar" %>
+		<% end %>
+		<% if user_signed_in? %>
+		<div class="span10 admin">
+		<% else %>
+			<div class="span10 user">
+				<% end %>
+			<%= render "layouts/messages" %>
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

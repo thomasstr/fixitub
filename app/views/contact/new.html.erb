@@ -1,0 +1,26 @@
+<br/>
+<h3>E-post support:</h3>
+<%= form_for @message, :url => contact_path do |form| %>
+	<fieldset class="fields">
+		<div class="field">
+			<%= form.text_field :name, 'placeholder' => 'Navn' %>
+		</div>
+		
+		<div class="field">
+			<%= form.text_field :email, 'placeholder' => 'E-post' %>
+		</div> 
+		
+		<div class="field">
+			<%= form.text_field :subject, 'placeholder' => 'Emne' %>
+		</div>
+		
+		<div class="field">
+			<%= form.text_area :body, 'placeholder' => 'Melding', :class => 'input-xlarge', :rows => '5' %>
+		</div>
+	</fieldset>
+		
+	<fieldset class="actions">
+		<%= form.submit "Send" %>
+	</fieldset>
+	
+	<% end %>

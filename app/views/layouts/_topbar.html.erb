@@ -1,0 +1,8 @@
+<div id="topbar">
+	<ul>
+		<li><%= link_to 'Produkter', products_path %></li>
+		<li><%= link_to 'Kategorier', categories_path %></li>
+		<li><%= link_to 'Nyheter', posts_path %></li>
+		<li><%= link_to "Logg ut", destroy_user_session_path, :method => :delete %></li>
+	</ul>
+</div>

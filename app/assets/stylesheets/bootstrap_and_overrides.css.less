@@ -1,0 +1,213 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot#iefix");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-path("fontawesome-webfont.svg");
+
+// Font Awesome
+@import "fontawesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+ul, ol {
+margin: 1em 0;
+padding: 0 0 0 40px;
+}
+ 
+/* Sidebar */
+
+#sidebar {
+float: right;
+left: 0px;
+width: 250px;
+height: 100%;
+background-color: #3F3F3F;
+color: white;
+position: fixed;
+-webkit-transition: right 0.5s ease-in-out;
+-moz-transition: right 0.5s ease-in-out;
+-o-transition: right 0.5s ease-in-out;
+-ms-transition: right 0.5s ease-in-out;
+transition: right 0.5s ease-in-out;
+}
+
+#sidebar ul {
+list-style: none;
+padding: 0px;
+margin: 0px;
+z-index: 120;
+}
+
+#sidebar ul li a {
+display: block;
+color: white;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 15px;
+background-repeat: no-repeat;
+background-position: 15px center;
+padding: 20px 0px 20px 55px;
+border-bottom: 1px solid #232323;
+border-top: 1px solid #5B5B5B;
+}
+ 
+#sidebar ul {
+list-style: none;
+padding: 0px;
+margin: 0px;
+z-index: 50;
+}
+ 
+#sidebar ul li a:visited {
+color: white;
+}
+ 
+#sidebar ul li a.service {
+background-image: url('icon_white_nav_hammer.png');
+}
+ 
+#sidebar ul li a.chat {
+background-image: url('icon_white_nav_chat.png');
+}
+ 
+#sidebar ul li a.mail {
+background-image: url('icon_white_nav_mail.png');
+}
+ 
+#sidebar ul li a.login {
+background-image: url('colors.png');
+}
+
+#logo {
+border: 0px;
+border-bottom: 0px;
+border-top: 0px;
+text-align:center;
+margin-top:10px;
+}
+
+#contact-logos {
+border: 0px;
+border-bottom: 0px;
+border-top: 0px;
+margin-top:5px;
+text-align:center;
+}
+
+/* Slider */
+
+#slides {
+display:none;
+}
+
+.slides-pagination {
+margin: 2px 0 0;
+float: right;
+list-style: none;
+}
+
+.slides-pagination ul {
+padding: 0;
+}
+
+.slides-pagination li {
+float: left;
+margin: 0 1px;
+}
+
+.slides-pagination li a {
+display: block;
+width: 12px;
+height: 0;
+padding-top: 13px;
+background-image: url('pagination.png');
+background-position: 0 0;
+float: left;
+overflow: hidden;
+}
+
+.slides-pagination li.current a, .pagination li.current a:hover { background-position: 0 -13px }
+
+.slides-pagination li a:hover { background-position: 0 -26px }
+
+/* Topbar */
+#topbar {
+float: top;
+height:43px;
+width: 100%;
+margin-left:230px;
+background-color: #3F3F3F;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+position:fixed;
+border-bottom: 1px solid #232323;
+}
+
+#topbar ul li{
+list-style: none;
+display: inline;
+font-size: 15px;
+}
+
+#topbar a {
+color: white;
+}
+ 
+#sorting {
+background-color: #F2F2F2;
+margin: 0px;
+padding: 20px 45px 80px 45px;
+list-style: none;
+border-bottom: 1px solid #D2D2D2;
+line-height: 30px;
+}
+ 
+#sorting li {
+float: left;
+padding-right: 0px;
+margin-right: 20px;
+width: 180px;
+}
+ 
+#sorting ul li a.iphone4 {
+background-image: url('iphone4collection.jpg');
+}
+ 
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+/* Check if admin is logged in */
+.admin {
+margin-top:50px;
+padding-left:210px;
+}
+
+.user {
+padding-left:210px;
+}

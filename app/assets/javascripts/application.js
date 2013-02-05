@@ -15,14 +15,15 @@
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require best_in_place
-//= require rails.validations.simple_form
 //= require_tree .
 
 $(function(){
       $("#slides").slidesjs({
 		  play: {
-			  active: true
-			  effect: "slide"
+			  active: true,
+			  effect: "slide",
+			  interval: 5000,
+			  auto: true
 		  }
 	  });
     });

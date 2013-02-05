@@ -33,10 +33,6 @@ group :production do
   gem 'mysql2'
 end
 
-group :misc do
-  gem 'google-analytics-rails'
-end
-
 gem 'active_attr'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'cocaine'
@@ -45,6 +41,7 @@ gem 'best_in_place'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'google-analytics-rails'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -54,10 +51,10 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'

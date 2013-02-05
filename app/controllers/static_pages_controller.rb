@@ -24,5 +24,12 @@ class StaticPagesController < ApplicationController
   end
   
   def about
+    @employee = Employee.all
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @employee }
+    end
   end
+  
 end

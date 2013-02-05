@@ -1,5 +1,8 @@
 Fixitub::Application.routes.draw do
   
+  resources :employees
+
+
   devise_for :users
   
   devise_scope :user do

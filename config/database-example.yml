@@ -1,7 +1,0 @@
-production:
-  adapter: mysql2
-  host: localhost
-  database: fixitub_production
-  pool: 5
-  user: fixitub
-  password: prv64dri

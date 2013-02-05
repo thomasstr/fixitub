@@ -10,6 +10,7 @@ Fixitub::Application.routes.draw do
   match "/home", to: "static_pages#home"
   match "/repairs", to: "static_pages#repairs"
   match "/dropline", to: "static_pages#contact"
+  match "/about", to: "static_pages#about"
   
   match "contact" => "contact#new", :as => "contact", :via => :get
   match "contact" => "contact#create", :as => "contact", :via => :post

@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :p_about, :p_anr, :p_name, :p_price, :category_id, :stock
   validates_presence_of :p_name, :uniqueness => true
-  validates_presence_of :p_anr, :uniqueness => true
+  validates :p_anr, :uniqueness => true
   belongs_to :category
   
   has_attached_file :avatar, :styles => {

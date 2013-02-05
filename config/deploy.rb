@@ -35,12 +35,27 @@ namespace :deploy do
       run "cd #{current_path}; nice -19 #{shared_path}/bin/bundle install vendor/" # nice -19 is very important otherwise DH will kill the process!
       run "cd #{current_path}; #{shared_path}/bin/bundle lock"
     end
-    desc "reload the database with seed data"
-    task :seed do
-        run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
-      end
   end
   before "deploy:restart", "bundle:install"
+  
+  namespace :db do
+    desc "Populate the database with seed data"
+    task :seed do
+        run "cd #{current_path}; rake db:seed RAILS_ENV=production"
+      end
+    desc "Resets the Production Database"
+    task :migrate_reset do
+      puts "\n\n=== Resetting the Production Database! ===\n\n"
+      run "cd #{current_path}; rake db:migrate:reset RAILS_ENV=production"
+    end
+    
+    desc "Destroys Production Database"
+    task :drop do
+      puts "\n\n=== Destroying the Production Database! ===\n\n"
+      run "cd #{current_path}; rake db:drop RAILS_ENV=production"
+      system "cap deploy:set_permissions"
+    end
+  end
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"

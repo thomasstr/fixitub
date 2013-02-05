@@ -35,6 +35,10 @@ namespace :deploy do
       run "cd #{current_path}; nice -19 #{shared_path}/bin/bundle install vendor/" # nice -19 is very important otherwise DH will kill the process!
       run "cd #{current_path}; #{shared_path}/bin/bundle lock"
     end
+    desc "reload the database with seed data"
+    task :seed do
+        run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
+      end
   end
   before "deploy:restart", "bundle:install"
 

@@ -27,3 +27,5 @@ $(function(){
 		  }
 	  });
     });
+	
+	$('#myModal').html('$("<%= j render(:partial => new_employee_path ")');

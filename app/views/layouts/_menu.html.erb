@@ -3,9 +3,7 @@
 		<%=link_to "#{image_tag("fixitub-logo.png")}".html_safe, root_path %>
 	</div>
 	<br/>
-	<br/>
-	<br/>
-	<br/>
+	<div class="clear"></div>
 	<ul>
 		<li><%= link_to 'Reperasjoner ', repairs_path, :class => 'icon service' %></li>
 		<li><%= link_to 'Spør vår tekniker', contact_path, :class => 'icon chat' %></li>
@@ -15,6 +13,7 @@
 		<li></li>
 	</ul>
 	<div id="contact-logos">
+		<p>Lik vår facebook side</p>
 		<%=link_to "#{image_tag("fb-logo.png")}".html_safe, "http://www.facebook.com/FixItUB?fref=ts" %>
 	</div>
 </div>

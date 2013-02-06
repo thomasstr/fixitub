@@ -6,5 +6,4 @@ class NotificationMailer < ActionMailer::Base
     @message = message
     mail(:subject => "[FixIt UB] #{message.subject}")
   end
-  
 end

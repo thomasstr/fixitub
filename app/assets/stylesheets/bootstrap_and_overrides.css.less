@@ -35,8 +35,13 @@ ul, ol {
 margin: 1em 0;
 padding: 0 0 0 40px;
 }
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
  
-/* Sidebar */
+/* Sidebar and logos */
 
 #sidebar {
 float: right;
@@ -153,7 +158,8 @@ overflow: hidden;
 
 .slides-pagination li a:hover { background-position: 0 -26px }
 
-/* Topbar */
+/* Topbar for admin */
+
 #topbar {
 float: top;
 height:43px;
@@ -176,7 +182,9 @@ font-size: 15px;
 #topbar a {
 color: white;
 }
- 
+
+/* Sorting */
+
 #sorting {
 background-color: #F2F2F2;
 margin: 0px;
@@ -196,11 +204,6 @@ width: 180px;
 #sorting ul li a.iphone4 {
 background-image: url('iphone4collection.jpg');
 }
- 
-li {
-display: list-item;
-text-align: -webkit-match-parent;
-}
 
 /* Check if admin is logged in */
 .admin {
@@ -210,4 +213,10 @@ padding-left:210px;
 
 .user {
 padding-left:210px;
+}
+
+/* Div */
+
+.center-text {
+text-align: center;
 }

@@ -14,9 +14,9 @@
 		<%= render "layouts/topbar" %>
 		<% end %>
 		<% if user_signed_in? %>
-		<div class="span10 admin">
+		<div class="span11 admin">
 		<% else %>
-			<div class="span10 user">
+			<div class="span11 user">
 				<% end %>
 			<%= render "layouts/messages" %>
 			<%= yield %>

@@ -1,26 +1,25 @@
-<br/>
-<h3>E-post support:</h3>
-<%= form_for @message, :url => contact_path do |form| %>
-	<fieldset class="fields">
-		<div class="field">
-			<%= form.text_field :name, 'placeholder' => 'Navn' %>
+<ul class="media-list">
+	<li class="media">
+		<%= image_tag "Support.png", :class => "pull-left" %>
+		<div class="media-body">
+			<h2 class="media-heading">
+				E-post support
+			</h2>
+			<p>Send inn ditt spørsmål og vi vil svare deg så godt vi kan. </p>
+		</div>
+	</li>
+	<hr>
+</ul>
+
+<%= simple_form_for @message, :url => contact_path do |form| %>
+		<div class="form-inputs">
+			<%= form.input :name, placeholder: 'Navn' %>
+			<%= form.input :email, placeholder: 'E-post' %>
+			<%= form.input :subject, placeholder: 'Emne' %>
+			<%= form.text_area :body, placeholder: 'Melding', :class => 'input-xlarge', :rows => '5' %>
 		</div>
 		
-		<div class="field">
-			<%= form.text_field :email, 'placeholder' => 'E-post' %>
-		</div> 
-		
-		<div class="field">
-			<%= form.text_field :subject, 'placeholder' => 'Emne' %>
-		</div>
-		
-		<div class="field">
-			<%= form.text_area :body, 'placeholder' => 'Melding', :class => 'input-xlarge', :rows => '5' %>
-		</div>
-	</fieldset>
-		
-	<fieldset class="actions">
-		<%= form.submit "Send" %>
-	</fieldset>
-	
+	<div class="actions">
+		<%= form.submit "Send", :class => "btn" %>
+	</div>
 	<% end %>

@@ -14,7 +14,11 @@
 <ul class="media-list">
 	<% @products.each do |product| %>
 	<li class="media">
+		<% if product.avatar.exists? %>
 		<%= image_tag product.avatar.url(:thumb), :class => "pull-left" %>
+		<% else %>
+		<%= image_tag "missing.png", :class => "pull-left" %>
+		<% end %>
 		<div class="media-body">
 			<h4 class="media-heading">
 				<%= link_to product.p_name, product_path(product) %>

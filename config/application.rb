@@ -60,14 +60,12 @@ module Fixitub
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    config.action_mailer.default_url_options = { :host => "localhost" }
-    
     config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "gmail.com",
-      :user_name            => "strtho@gmail.com",
-      :password             => "prv64dri",
+      :user_name            => "fixitub.svgs@gmail.com",
+      :password             => "fixitubsykkylven",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }

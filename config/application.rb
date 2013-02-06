@@ -1,3 +1,4 @@
+# encoding: utf-8
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -71,7 +72,7 @@ module Fixitub
     }
 
     config.action_mailer.default_url_options = {
-      :host => "gmail.com"
+      :host => "fixitub.no"
     }
     
   end

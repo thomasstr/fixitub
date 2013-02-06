@@ -34,14 +34,15 @@ group :production do
 end
 
 gem 'active_attr'
-gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'cocaine'
-gem 'metamagic'
-gem 'best_in_place'
-gem 'simple_form'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git" # Avatar bilder
+gem 'cocaine' # Tilhører paperclip
+gem 'metamagic' # Meta informasjon i siden
+gem 'best_in_place' # Endrer kolonner med å trykke på dem
+gem 'simple_form' # Gjør redigering av forms enklere
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
-gem 'google-analytics-rails'
+gem 'google-analytics-rails' # Statistikk over siden gjennom google analytics
+gem 'letter_opener' # Åpne e-postutsendelser i nettleseren
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

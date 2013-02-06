@@ -1,6 +1,6 @@
 class NotificationMailer < ActionMailer::Base
-  default :from => "no-reply@fixitub.no"
-  default :to => "fixitub.svgs@gmail.com"
+  default from: "fixitub.svgs@gmail.com"
+  default to: "fixitub.svgs@gmail.com"
   
   def new_message(message)
     @message = message

@@ -27,6 +27,9 @@
   <div class="control-group">
 	  <%= f.check_box :stock %> På lager
   </div>
+  <div class="control-group">
+	  <%= f.file_field :avatar %>
+  </div>
   <div class"control-group">
 	  <%= collection_select(:product, :category_id, @categories, :id, :c_name, {:prompt => "Velg kategori" }) %>
 	  <br/><br/>

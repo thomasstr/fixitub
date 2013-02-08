@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :p_about, :p_anr, :p_name, :p_price, :category_id, :stock
+  attr_accessible :p_about, :p_anr, :p_name, :p_price, :category_id, :stock, :avatar
   validates_presence_of :p_name
   validates :p_name, :p_anr, :uniqueness => true
   belongs_to :category

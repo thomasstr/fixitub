@@ -27,5 +27,24 @@ $(function(){
 		  }
 	  });
     });
+
+	$(window).load(function() {
+		$('body').nivoZoom({
+				speed:500,
+				zoomHoverOpacity:0.8,
+				overlay:false,
+				overlayColor:'#333',
+				overlayOpacity:0.5,
+				captionOpacity:0.8
+			});
+	});
 	
+	$(function(){
+	    $('#thumbnails img').each(function() {
+	        var original_img_url = $(this).attr('data-zoom-url');
+	        $(this)
+	        .parent()
+	        .zoom({url: original_img_url});
+	    });
+	});
 	$('#myModal').html('$("<%= j render(:partial => new_employee_path ")');

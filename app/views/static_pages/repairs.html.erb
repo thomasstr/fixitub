@@ -14,13 +14,7 @@
 <ul class="media-list">
 	<% @products.each do |product| %>
 	<li class="media">
-		<% if product.avatar.exists? %>
-		<a href="/assets/products/2/original/440x330-iphone-4s-black-white-siri.jpg" class="nivoZoom center">
-			<%= image_tag product.avatar.url(:thumb), :class => "pull-left" %>
-		</a>
-		<% else %>
-		<%= image_tag "missing.png", :class => "pull-left" %>
-		<% end %>
+		<%= product.image_exists %>
 		<div class="media-body">
 			<h4 class="media-heading">
 				<%= link_to product.p_name, product_path(product) %>
@@ -30,11 +24,7 @@
 				<%= number_to_currency(product.p_price, :locale => :nb) %>
 			</div>
 			<div class="pull-right">
-			    <% if product.stock == true %>
-			    <%= image_tag "in_stock.gif" %>
-			    <% else %>
-			    <%= image_tag "not_in_stock.jpg" %>
-			    <% end %>
+			    <%= product.qty_instock %>
 			</div>
 		</div>
 	</li>

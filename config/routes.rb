@@ -1,14 +1,15 @@
 Fixitub::Application.routes.draw do
   
-  resources :employees
-
-
-  devise_for :users
+  get "users/index"
+  get "users/show"
   
-  devise_scope :user do
-    match "admin" => "devise/sessions#new"
-    match "signout" => "devise/sessions#destroy"
-  end
+  devise_for :users
+
+  resources :users
+  resources :employees
+  resources :posts
+  resources :categories
+  resources :products
 
   match "/home", to: "static_pages#home"
   match "/repairs", to: "static_pages#repairs"
@@ -18,14 +19,11 @@ Fixitub::Application.routes.draw do
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
   
+  authenticated :user do
+    root :to => "static_pages#home"
+  end
+  
   root :to => "static_pages#home"
-  
-  resources :contact
-  resources :posts
-  resources :categories
-  resources :products
-  
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

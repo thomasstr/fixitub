@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :only_allow_admin
   # GET /employees
   # GET /employees.json
   def index

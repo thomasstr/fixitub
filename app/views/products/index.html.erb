@@ -4,6 +4,8 @@
     <th>Artikkelnummer</th>
     <th>Info</th>
     <th>Pris</th>
+	<th>Antall på lager</th>
+	<th>På lager</th>
     <th></th>
   </tr>
 
@@ -11,11 +13,16 @@
   <tr>
     <td><%= best_in_place product, :p_name %></td>
     <td><%= best_in_place product, :p_anr %></td>
-    <td><%= best_in_place product, :p_about %></td>
+    <td><%= best_in_place product, :p_about, :type => :textarea %></td>
     <td><%= best_in_place product, :p_price %></td>
-    <td><%= link_to 'Show', product, :class => "btn" %>
-    <%= link_to 'Edit', edit_product_path(product), :class => "btn" %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+	<td><%= product.check_qty %></td>
+	<td><%= product.admin_qty_instock %></td>
+    <td>
+		<%= link_to 'Vis', product, :class => "btn" %>
+    	<%= link_to 'Endre', edit_product_path(product), :class => "btn" %>
+		<%= link_to "Vare solgt", product.update_inventory , :class => "btn btn-danger" %>
+    	<%= link_to 'Slett', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+	</td>
   </tr>
 <% end %>
 </table>

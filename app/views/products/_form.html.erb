@@ -1,39 +1,18 @@
-<%= simple_form_for(@product, :html => { :multipart => true, :class => "form-horizontal" }) do |f| %>
+<%= simple_form_for(@product, :html => { :multipart => true }) do |f| %>
+	<%= f.error_notification %>
 
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="control-group">
-	  <%= f.text_field :p_name, "placeholder" => "Produktnavn", :autofocus => true %>
-  </div>
-  <div class="control-group">
-	  <%= f.text_field :p_anr, "placeholder" => "Artikkelnummer" %>
-  </div>
-  <div class="control-group">
-	  <%= f.text_area :p_about, :type => :textarea, "placeholder" => "Om produktet", :cols => '5x10' %>
-  </div>
-  <div class="control-group">
-	  <%= f.text_field :p_price, "placeholder" => "Pris" %>
-  </div>
-  <div class="control-group">
-	  <%= f.check_box :stock %> På lager
-  </div>
-  <div class="control-group">
-	  <%= f.file_field :avatar %>
-  </div>
-  <div class"control-group">
-	  <%= collection_select(:product, :category_id, @categories, :id, :c_name, {:prompt => "Velg kategori" }) %>
-	  <br/><br/>
-  <div class="actions">
-    <%= f.submit "Legg til", :class => "btn btn-primary btn-small" %>
-  </div>
+<div class="form-inputs">
+	<%= f.input :p_name, placeholder: "Produktnavn", :autofocus => true %>
+	<%= f.input :p_anr, placeholder: "Artikkelnummer" %>
+	<%= f.input :p_about, as: :text, placeholder: "Om produktet", :cols => '5x10' %>
+	<%= f.input :p_price, placeholder: "Pris" %>
+	<%= f.input :stock, as: :select %>
+	<%= f.input :qty, placeholder: "Antall på lager" %>
+	<%= f.input :avatar, as: :file %>
+	<%= f.association :category, :collection => Category.all, :label_method => :c_name, :value_method => :id %>
+</div>
+<br/>
+<div class="actions">
+	<%= f.submit "Legg til", :class => "btn btn-primary btn-small" %>
+</div>
 <% end %>

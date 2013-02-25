@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => ['index', 'new', 'edit', 'delete', 'update', 'destroy']
+  before_filter :only_allow_admin
   respond_to :html, :json
   # GET /products
   # GET /products.json
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to products_path, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }

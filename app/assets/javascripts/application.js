@@ -27,6 +27,22 @@ $(function(){
 		  }
 	  });
     });
+	
+	new Morris.Line({
+	  // ID of the element in which to draw the chart.
+	  element: 'products_chart',
+	  // Chart data records -- each entry in this array corresponds to a point on
+	  // the chart.
+	  data: $('#products_chart').data('products'),
+	  // The name of the data record attribute that contains x-values.
+	  xkey: 'created_at',
+	  // A list of names of data record attributes that contain y-values.
+	  ykeys: ['price', 'download_price'],
+	  // Labels for the ykeys -- will be displayed when you hover over the
+	  // chart.
+	  labels: ['Total pris', 'Antall produkt'],
+	  preUnits: '$'
+	});
 
 	$(window).load(function() {
 		$('body').nivoZoom({
@@ -48,3 +64,6 @@ $(function(){
 	    });
 	});
 	$('#myModal').html('$("<%= j render(:partial => new_employee_path ")');
+	
+	$(".alert-message").alert()
+	$(".alert-message").alert('close')

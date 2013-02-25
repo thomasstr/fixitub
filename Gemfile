@@ -43,6 +43,16 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'google-analytics-rails' # Statistikk over siden gjennom google analytics
 gem 'letter_opener' # Åpne e-postutsendelser i nettleseren
+gem 'cancan'
+gem 'rolify'
+
+gem "email_spec", :group => :test
+gem "cucumber-rails", :group => :test, :require => false
+gem "database_cleaner", :group => :test
+gem "launchy",:group => :test
+gem "capybara", :group => :test
+gem "factory_girl_rails", :group => [:development, :test]
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

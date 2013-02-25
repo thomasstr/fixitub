@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  respond_to :html, :json
+  
   def home
     @posts = Post.all
 
@@ -11,12 +13,12 @@ class StaticPagesController < ApplicationController
   def repairs
     @products = Product.all(:order => 'id DESC')
     #@products = Product.search params[:search]
-    @categories = Category.all()
+    #@categories = Category.all()
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: [@products, @categories] }
-      format.xml { render xml: [ @products ] }
+      format.json
+      format.xml
     end  
   end
   
@@ -24,11 +26,11 @@ class StaticPagesController < ApplicationController
   end
   
   def about
-    @employees = Employee.all
+    @users = User.all(:conditions => {:roles => :admin})
     
     respond_to do |format|
       format.html
-      format.json { render json: @employees }
+      format.json { render json: @users }
     end
   end
   

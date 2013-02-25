@@ -11,13 +11,13 @@
 	<hr>
 </ul>
 <ul class="thumbnails">
-	<% @employees.each do |e| %>
+	<% @users.each do |e| %>
 	<li class="span3">
 		<div class="thumbnail">
-        	<%= image_tag "missing.png" %>
+        	
 			<div class="caption">
-            	<h3><%= e.name %></h3>
-                <p><%= e.email %></p>
+            	<h4 class="center-text"><%= e.name %></h4>
+                <p class="center-text"><%= e.email %></p>
 			</div>
 		</div>
 	</li>

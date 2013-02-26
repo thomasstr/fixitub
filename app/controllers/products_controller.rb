@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => ['index', 'new', 'edit', 'delete', 'update', 'destroy']
-  before_filter :only_allow_admin
+  #before_filter :only_allow_admin
   respond_to :html, :json
   # GET /products
   # GET /products.json

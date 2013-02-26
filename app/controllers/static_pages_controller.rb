@@ -26,7 +26,7 @@ class StaticPagesController < ApplicationController
   end
   
   def about
-    @users = User.all(:conditions => {:roles => :admin})
+    @users = User.all #(:conditions => {:roles => :admin})
     
     respond_to do |format|
       format.html

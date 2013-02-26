@@ -1,20 +1,22 @@
 # encoding: utf-8
-puts 'CREATING ROLES'
-Role.create([
-  { :name => 'admin' }, 
-  { :name => 'user' }, 
-  { :name => 'VIP' }
-], :without_protection => true)
+#puts 'CREATING ROLES'
+#Role.create([
+#  { :name => 'admin' }, 
+#  { :name => 'user' }, 
+#  { :name => 'VIP' }
+#], :without_protection => true)
 
 puts 'SETTING UP DEFAULT ADMIN LOGINS'
 user = User.create! :name => "Espen Sæther", :email => 'espen_us@hotmail.com', :password => 'espenus1', :password_confirmation => 'espenus1'
 puts 'New user created: ' << user.name
-user2 = User.create! :name => "Thomas Strømme", :email => 'strtho@gmail.com', :password => 'prv64dri', :password_confirmation => 'prv64dri'
+user2 = User.create! :name => "Andreas Strømme", :email => 'andreas.stromme@gmail.com', :password => 'andreasus1', :password_confirmation => 'andreasus1'
 puts 'New user created: ' << user2.name
+user3 = User.create! :name => "Magnus Overå", :email => 'magnus.overaa@gmail.com', :password => 'magnusus1', :password_confirmation => 'magnusus1'
+puts 'New user created: ' << user3.name
 
-puts "ADDING ROLES TO USERS"
-user.add_role :admin
-user2.add_role :admin
+#puts "ADDING ROLES TO USERS"
+#user.add_role :admin
+#user2.add_role :admin
 
 puts "SETTING UP CATEGORIES"
 category1 = Category.create! :c_name => 'Antenner'

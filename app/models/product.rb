@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   include Sprockets::Helpers::RailsHelper
   include Sprockets::Helpers::IsolatedHelper
-  rolify
+  #rolify
   #helper_method :check_qty
   attr_accessible :p_about, :p_anr, :p_name, :p_price, :category_id, :stock, :avatar, :qty
   validates_presence_of :p_name

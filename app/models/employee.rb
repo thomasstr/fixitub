@@ -1,7 +1,7 @@
 class Employee < ActiveRecord::Base
   include Sprockets::Helpers::RailsHelper
   include Sprockets::Helpers::IsolatedHelper
-  rolify
+  #rolify
   attr_accessible :email, :name
   validates_presence_of :name
   

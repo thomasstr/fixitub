@@ -13,6 +13,7 @@ user2 = User.create! :name => "Andreas Strømme", :email => 'andreas.stromme@gma
 puts 'New user created: ' << user2.name
 user3 = User.create! :name => "Magnus Overå", :email => 'magnus.overaa@gmail.com', :password => 'magnusus1', :password_confirmation => 'magnusus1'
 puts 'New user created: ' << user3.name
+user4 = User.create! :name = "Arve Einbu Alvestad", :email => "arve.alvestad@hotmail.com", :password => "arvealvestad1", :password_confirmation => "arvealvestad1"
 
 #puts "ADDING ROLES TO USERS"
 #user.add_role :admin

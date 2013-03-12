@@ -13,9 +13,9 @@ user2 = User.create! :name => "Andreas Strømme", :email => 'andreas.stromme@gma
 puts 'New user created: ' << user2.name
 user3 = User.create! :name => "Magnus Overå", :email => 'magnus.overaa@gmail.com', :password => 'magnusus1', :password_confirmation => 'magnusus1'
 puts 'New user created: ' << user3.name
-user4 = User.create! :name = "Arve Einbu Alvestad", :email => "arve.alvestad@hotmail.com", :password => "arvealvestad1", :password_confirmation => "arvealvestad1"
+user4 = User.create! :name => "Arve Alvestad", :email => 'arve.alvestad@hotmail.com', :password => 'arvealvestad1', :password_confirmation => 'arvealvestad1'
 puts 'New user created: ' << user4.name
-user5 = User.create! :name = "Ruben Tötterman", :email => "ruben.totterman@hotmail.com", :password => "rubentotter1", :password_confirmation => "rubentotter1"
+user5 = User.create! :name => "Ruben Tötterman", :email => "ruben.totterman@hotmail.com", :password => "rubentotter1", :password_confirmation => "rubentotter1"
 puts 'New user created: ' << user5.name
 
 #puts "ADDING ROLES TO USERS"

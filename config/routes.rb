@@ -1,5 +1,11 @@
 Fixitub::Application.routes.draw do
   
+  resources :phone_models
+
+
+  resources :repairs
+
+
   get "users/index"
   get "users/show"
   

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @repair.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @repair.email %>
+</p>
+
+<p>
+  <b>Phone model:</b>
+  <%= @repair.phone_model %>
+</p>
+
+
+<%= link_to 'Edit', edit_repair_path(@repair) %> |
+<%= link_to 'Back', repairs_path %>

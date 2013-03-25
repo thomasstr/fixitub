@@ -52,6 +52,8 @@ gem "database_cleaner", :group => :test
 gem "launchy",:group => :test
 gem "capybara", :group => :test
 gem "factory_girl_rails", :group => [:development, :test]
+gem "better_errors", :group => :development
+gem "binding_of_caller", :group => :development
 
 gem 'jquery-rails'
 

@@ -1,0 +1,16 @@
+<%= simple_form_for(@repair) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "Navn" %>
+    <%= f.input :email, placeholder: "E-post" %>
+    <%= f.association :phone_model, :collection => PhoneModel.all, :label_method => :name, :value_method => :id, prompt: "Velg en modell" %>
+    <%= f.association :product, :collection => Product.all, :label_method => :p_name, :value_method => :id, prompt: "Velg et produkt" %>
+    <%= f.input :free_text, input_html: { cols: "10", rows: "4" }, placeholder: "Fri tekst" %>
+    <%= f.input :ready, as: :date_time, placeholder: "Telefon klar f.eks. 17 Mars 2016" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

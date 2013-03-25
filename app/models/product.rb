@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
   validates_presence_of :p_name
   validates_uniqueness_of :p_name, :p_anr unless :nil
   belongs_to :category
+
+  has_many :repairs
   
   has_attached_file :avatar, :styles => {
     :thumb => "110x110#",

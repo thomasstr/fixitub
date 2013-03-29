@@ -1,4 +1,20 @@
 class RepairsController < ApplicationController
+
+  def send_confirmation_mail_on_ready_phone
+    @repair = Repair.find(params[:id])
+    @email = @repair.email
+    @name = @repair.name
+
+    # Sending email confirmation
+    RepairNotifier.phone_repair(@repair).deliver
+
+    # Destroy the repair service
+    @repair.destroy
+
+    # Redirecting to repairs url
+    redirect_to repairs_url, notice: "Melding sendt til #{@repair.name}."
+  end
+
   # GET /repairs
   # GET /repairs.json
   def index
@@ -45,7 +61,9 @@ class RepairsController < ApplicationController
 
     respond_to do |format|
       if @repair.save
-        format.html { redirect_to @repair, notice: 'Repair was successfully created.' }
+        #Sending mail after saved
+        RepairNotifier.new_message(@repair).deliver
+        format.html { redirect_to repairs_url, notice: 'Repair was successfully created.' }
         format.json { render json: @repair, status: :created, location: @repair }
       else
         format.html { render action: "new" }

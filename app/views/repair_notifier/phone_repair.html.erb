@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h2>Hei <%= @repair.name %>.</h2>
+    <p>
+      Vi har nå byttet <%= @repair.product.p_name %> på din <%= @repair.phone_model.name %>.<br/>
+    </p>
+    <p>
+      Den er nå klar for henting.
+    </p>
+    <p>Mvh FixItUB<br/>
+    <%= link_to "http://www.fixitub.no", "http://www.fixitub.no", target: "_blank" %> </p>
+  </body>
+</html>

@@ -44,7 +44,7 @@ class PhoneModelsController < ApplicationController
 
     respond_to do |format|
       if @phone_model.save
-        format.html { redirect_to @phone_model, notice: 'Phone model was successfully created.' }
+        format.html { redirect_to phone_models_path, notice: 'Phone model was successfully created.' }
         format.json { render json: @phone_model, status: :created, location: @phone_model }
       else
         format.html { render action: "new" }

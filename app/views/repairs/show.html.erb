@@ -12,9 +12,9 @@
 
 <p>
   <b>Phone model:</b>
-  <%= @repair.phone_model %>
+  <%= @repair.phone_model.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_repair_path(@repair) %> |
-<%= link_to 'Back', repairs_path %>
+<%= link_to 'Endre', edit_repair_path(@repair), class: "btn btn-small" %> |
+<%= link_to 'Tilbake', repairs_path, class: "btn btn-small" %>

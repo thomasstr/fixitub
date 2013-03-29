@@ -1,23 +1,21 @@
 <h2>Telefon-modeller</h2>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @phone_models.each do |phone_model| %>
   <tr>
-    <td><%= phone_model.name %></td>
-    <td><%= link_to 'Show', phone_model %></td>
-    <td><%= link_to 'Edit', edit_phone_model_path(phone_model) %></td>
-    <td><%= link_to 'Destroy', phone_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= best_in_place phone_model, :name %></td>
+    <td>
+      <%= link_to 'Endre', edit_phone_model_path(phone_model), class: "btn btn-small" %>
+      <%= link_to 'Slett', phone_model, method: :delete, data: { confirm: 'Er du sikker?' }, class: "btn btn-small btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Phone model', new_phone_model_path %>
+<%= link_to 'Ny telefonmodell', new_phone_model_path, class: "btn btn-small" %>

@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   #def only_allow_admin
   #  redirect_to root_path, :alert => "Not authorized as an administrator." unless current_user.has_role? :admin
   #end
+
+  def url_with_protocol(url)
+  	/^http/.match(url) ? url : "http://#{url}"
+  end
 end

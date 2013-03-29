@@ -1,9 +1,4 @@
 Fixitub::Application.routes.draw do
-  
-  resources :phone_models
-
-
-  resources :repairs
 
 
   get "users/index"
@@ -16,9 +11,15 @@ Fixitub::Application.routes.draw do
   resources :posts
   resources :categories
   resources :products
+  resources :phone_models
+  resources :repairs do
+    member do
+      get "send_confirmation_mail_on_ready_phone", as: :phone_deliver
+    end
+  end
 
   match "/home", to: "static_pages#home"
-  match "/repairs", to: "static_pages#repairs"
+  match "/repairing", to: "static_pages#repairs"
   match "/dropline", to: "static_pages#contact"
   match "/about", to: "static_pages#about"
   

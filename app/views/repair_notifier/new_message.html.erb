@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h2>Hei <%= @repair.name %>.</h2>
+    <p>
+      Din <%= @repair.phone_model.name %> er nå levert til service.<br/>
+      Du vil motta en e-post når din telefonen er ferdig og klar for henting.<br/>
+    </p>
+    <p>Mvh FixItUB<br/>
+    <%= link_to "http://www.fixitub.no", "http://www.fixitub.no" , target: "_blank" %></p>
+  </body>
+</html>

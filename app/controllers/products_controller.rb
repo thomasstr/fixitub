@@ -2,6 +2,16 @@ class ProductsController < ApplicationController
   before_filter :authenticate_user!, :only => ['index', 'new', 'edit', 'delete', 'update', 'destroy']
   #before_filter :only_allow_admin
   respond_to :html, :json
+
+
+  def product_sold
+    @product = Product.find(params[:id])
+    #@update = Product.find(:all, conditions: {qty: :qty - 1})
+    prod_count = @product.count(:qty)
+    @product.update_attribute(:qty, prod_count)
+    redirect_to products_path, notice: "Varelager oppdatert"
+  end
+
   # GET /products
   # GET /products.json
   def index

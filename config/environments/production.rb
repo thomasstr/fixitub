@@ -67,4 +67,6 @@ Fixitub::Application.configure do
   
   # Google-analytics code
   GA.tracker = "UA-38195522-1"
+
+  
 end

@@ -1,4 +1,5 @@
 class RepairsController < ApplicationController
+  before_filter :authenticate_user!
 
   def send_confirmation_mail_on_ready_phone
     @repair = Repair.find(params[:id])

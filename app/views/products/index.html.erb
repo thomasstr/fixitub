@@ -20,7 +20,7 @@
     <td>
 		<%= link_to 'Vis', product, :class => "btn" %>
     	<%= link_to 'Endre', edit_product_path(product), :class => "btn" %>
-		<%= link_to "Vare solgt", product.update_inventory , :class => "btn btn-danger" %>
+		<%= link_to "Vare solgt", sold_product_path(product) , :class => "btn btn-danger" %>
     	<%= link_to 'Slett', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 	</td>
   </tr>

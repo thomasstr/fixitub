@@ -24,6 +24,10 @@ class Product < ActiveRecord::Base
         return qty
       end
     end
+
+    def prod_count
+      @product = product.qty.size
+    end
     
     def admin_qty_instock
       if qty.nil?

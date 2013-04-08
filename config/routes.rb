@@ -10,7 +10,11 @@ Fixitub::Application.routes.draw do
   resources :employees
   resources :posts
   resources :categories
-  resources :products
+  resources :products do
+    member do
+      get "product_sold", as: :sold
+    end
+  end
   resources :phone_models
   resources :repairs do
     member do
